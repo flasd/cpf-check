@@ -1,0 +1,59 @@
+{
+  "name": "cpf-check",
+  "version": "1.0.0",
+  "description": "Validador de CPF Moderno, Isomórfico e Super Leve.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test nyc mocha src/**/*.spec.js --compilers=babel-core/register",
+    "start": "npm run clean && cross-env NODE_ENV=development gulp",
+    "build": "npm run clean && cross-env NODE_ENV=production gulp",
+    "lint": "eslint gulpfile.js && eslint src/index.js",
+    "clean": "rimraf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flasd/cpf-check.git"
+  },
+  "keywords": [
+    "cpf",
+    "validar",
+    "validator"
+  ],
+  "author": "Marcel Coelho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flasd/cpf-check/issues"
+  },
+  "homepage": "https://github.com/flasd/cpf-check#readme",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-rewire": "^1.1.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "browser-sync": "^2.18.13",
+    "chai": "^4.1.0",
+    "cross-env": "^5.0.2",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-flowtype": "^2.35.0",
+    "eslint-plugin-import": "^2.7.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-flowtype": "^1.0.0",
+    "gulp-hash-filename": "^1.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
+    "mocha": "^3.5.0",
+    "nyc": "^11.1.0",
+    "rimraf": "^2.6.1",
+    "run-sequence": "^2.1.0"
+  },
+  "dependencies": {
+    "pretty-error": "^2.1.1"
+  }
+}
