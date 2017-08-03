@@ -190,7 +190,9 @@ export function generate(): String {
     return format(`${digits.join('')}${first}${second}`);
 }
 
+// We define the exported API
 const CPF = validate;
+
 CPF.parse = parse;
 CPF.strip = strip;
 CPF.format = format;
