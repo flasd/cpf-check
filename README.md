@@ -9,12 +9,13 @@ npm install cpf-check --save
 Then you can use it in your index.html
 ```html
 <script type="text/javascript" src="./node_modules/cpf-check/dist/cpf.min.js"></script>
+// window.CPF
 ```
 Or, you can import it in your module bundler of choice:
 ```javascript
 const CPF = require('cpf-check');
 
-// or
+// or, in ES6
 
 import CPF from 'cpf-check';
 ```
@@ -35,12 +36,14 @@ CPF.validate(myCpf);
 The `CPF.validate()` is an alias for the `CPF()` method.
 
 ### CPF.generate(): String
+Generates valid CPF's:
 ```javascript
 CPF.generate();
 // '676.754.677-10'
 ```
 
 ### CPF.parse(String): String
+Parse CPF's from text strings:
 ```javascript
 const myText = 'Hey, my CPF is 676.754.677-10';
 
@@ -49,6 +52,7 @@ CPF.parse(myText);
 ```
 
 ### CPF.format(String): String
+Format (beautify) CPF strings:
 ```javascript
 const myCpf = '67675467710';
 
@@ -57,12 +61,18 @@ CPF.format(myCpf);
 ```
 
 ### CPF.strip(String): String
+Strip (uglify) CPF strings:
 ```javascript
 const myCpf = '676.754.677-10';
 
 CPF.strip(myCpf);
 // '67675467710'
 ```
-### Copyright and License
+
+## PRs
+And if you find something that is not working as supposed to, please, open a PR.
+## Bonus!
+If you're curious to know how this module works before implementing it, the source code is heavily commented! head to [src/index.js](https://github.com/flasd/cpf-check/blob/master/src/index.js) to take a look!
+## Copyright and License
 
 Copyright (c) 2017 [Marcel Coelho](https://github.com/flasd) under the [MIT license](https://github.com/flasd/cpf-check/blob/master/LICENSE.md)
