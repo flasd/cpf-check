@@ -205,7 +205,9 @@ function generate() {
     return format('' + digits.join('') + first + second);
 }
 
+// We define the exported API
 var CPF = validate;
+
 CPF.parse = parse;
 CPF.strip = strip;
 CPF.format = format;
