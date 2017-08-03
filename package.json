@@ -1,6 +1,6 @@
 {
   "name": "cpf-check",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Validador de CPF Moderno, Isomórfico e Super Leve.",
   "main": "dist/index.js",
   "scripts": {
