@@ -11,7 +11,7 @@ Then you can use it in your index.html
 <script type="text/javascript" src="./node_modules/cpf-check/dist/cpf.min.js"></script>
 // window.CPF
 ```
-Or, you can import it in your module bundler of choice:
+Or, you can import it as a module:
 ```javascript
 const CPF = require('cpf-check');
 
@@ -19,10 +19,11 @@ const CPF = require('cpf-check');
 
 import CPF from 'cpf-check';
 ```
+Works on Node, any CommonJs Env. and as an AMD modules.
 
 ## Usage & API
 ### CPF(String): Boolean
-The main export is a function that validates CPF's.
+The main export is a function that validates CPFs.
 ```javascript
 const CPF = require('cpf-check')
 const myCpf = '676.754.677-10';
@@ -36,14 +37,14 @@ CPF.validate(myCpf);
 The `CPF.validate()` is an alias for the `CPF()` method.
 
 ### CPF.generate(): String
-Generates valid CPF's:
+Generates valid CPFs:
 ```javascript
 CPF.generate();
 // '676.754.677-10'
 ```
 
 ### CPF.parse(String): String
-Parse CPF's from text strings:
+Parse CPFs from text strings:
 ```javascript
 const myText = 'Hey, my CPF is 676.754.677-10';
 
