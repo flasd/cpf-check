@@ -3,20 +3,26 @@ const browserSync = require('browser-sync').create();
 const flow = require('gulp-flowtype');
 const fs = require('fs');
 const gulp = require('gulp');
-const hash = require('gulp-hash-filename');
 const plumber = require('gulp-plumber');
 const PrettyError = require('pretty-error');
 const rename = require('gulp-rename');
 const runSequece = require('run-sequence');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
+const umd = require('gulp-umd');
+const replace = require('gulp-replace');
+
+// ////////////////////////////////////////
 
 const babelOptions = JSON.parse(fs.readFileSync('./.babelrc', 'utf8'));
 const env = process.env.NODE_ENV;
 const pe = new PrettyError();
 
-const hashOptions = {
-    format: '{name}.{hash:8}{ext}'
+const umdOptions = {
+    dependencies: () => [],
+    exports: () => 'CPF',
+    namespace: () => 'CPF',
+    templateName: 'amdNodeWeb',
 };
 
 function errorHandler(error) {
@@ -29,17 +35,19 @@ const plumberOptions = {
     errorHandler: errorHandler,
 };
 
-function production(done) {
 
+// ////////////////////////////////////////
+
+function production(done) {
     gulp.src('src/index.js')
         .pipe(plumber(plumberOptions))
         .pipe(sourcemaps.init())
+        .pipe(replace(/export\s(default CPF;)?/g, ''))
         .pipe(babel(babelOptions))
+        .pipe(umd(umdOptions))
         .pipe(rename('cpf.js'))
-        .pipe(hash(hashOptions))
         .pipe(gulp.dest('./dist'))
         .pipe(uglify())
-        .pipe(hash(hashOptions))
         .pipe(rename({ suffix: '.min' }))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('./dist'))
@@ -51,7 +59,9 @@ function development(done) {
         gulp.src('src/index.js')
             .pipe(plumber(plumberOptions))
             .pipe(sourcemaps.init())
+            .pipe(replace(/export\s(default CPF;)?/g, ''))
             .pipe(babel(babelOptions))
+            .pipe(umd(umdOptions))
             .pipe(sourcemaps.write('.'))
             .pipe(browserSync.stream())
             .pipe(gulp.dest('./dist/'))
@@ -90,6 +100,8 @@ function initialize() {
 
     runSequece(['watch', 'development']);
 }
+
+// ////////////////////////////////////////
 
 gulp.task('watch', watch);
 gulp.task('development', development);
