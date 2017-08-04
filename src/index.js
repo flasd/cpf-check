@@ -193,9 +193,18 @@ export function generate(): String {
 // We define the exported API
 const CPF = validate;
 
-CPF.parse = parse;
-CPF.strip = strip;
-CPF.format = format;
-CPF.generate = generate;
+// We use this to write less boilerplate codo
+function describe(value) {
+    return {
+        value,
+    };
+}
+
+// Makes all properties immutable to prevent XSS validation spoofing
+Object.defineProperty(CPF, 'parse', describe(parse));
+Object.defineProperty(CPF, 'strip', describe(strip));
+Object.defineProperty(CPF, 'format', describe(format));
+Object.defineProperty(CPF, 'validate', describe(validate));
+Object.defineProperty(CPF, 'generate', describe(generate));
 
 export default CPF;
