@@ -73,8 +73,7 @@ CPF.strip(meuCpf);
 ## PRs
 Se você encontrar algo errado, não exite em abrir um PR!
 ## Bonus!
-Se você está curioso para saber como esse módulo funciona antes de implementa-lo no seu próximo projeto, o código fonte está amplamente comentado! (Em inglês, desculpa ;) Vá para 
-If you're curious to know how this module works before  [src/index.js](https://github.com/flasd/cpf-check/blob/master/src/index.js) é confira!
+Se você está curioso para saber como esse módulo funciona antes de implementa-lo no seu próximo projeto, o código fonte está amplamente comentado! (Em inglês, desculpa ;) Vá para [src/index.js](https://github.com/flasd/cpf-check/blob/master/src/index.js) é confira!
 ## Copyright e Licença
 
 Copyright (c) 2017 [Marcel Coelho](https://github.com/flasd) sob a [MIT license](https://github.com/flasd/cpf-check/blob/master/LICENSE.md)
