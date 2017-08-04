@@ -1,8 +1,8 @@
 # cpf-check
 CPF Validator, Generator e Formatter, runs both on browser and server-side. Incredibly Small 2.2KB (890bytes gziped!!).
 [![Build Status](https://travis-ci.org/flasd/cpf-check.svg?branch=master)](https://travis-ci.org/flasd/cpf-check) [![Coverage Status](https://coveralls.io/repos/github/flasd/cpf-check/badge.svg?branch=master)](https://coveralls.io/github/flasd/cpf-check?branch=master) [![npm version](https://badge.fury.io/js/cpf-check.svg)](https://www.npmjs.com/package/cpf-check)
-### Instalation
 (README available in portuguese in [README-pt-BR](https://github.com/flasd/cpf-check/blob/master/README-pt-BR.md)).
+### Instalation
 Add the latest version of cpf-check to your `package.json`.
 ```
 npm install cpf-check --save
