@@ -19,7 +19,7 @@ const CPF = require('cpf-check');
 
 import CPF from 'cpf-check';
 ```
-Funciona no Node, qualquer CommonJs Env. e como um módulo AMD.
+Funciona no Node, qualquer ambiente CommonJs e como um módulo AMD.
 
 ## Uso & API
 ### CPF(String): Boolean
