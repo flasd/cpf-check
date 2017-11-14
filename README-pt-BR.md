@@ -87,7 +87,7 @@ CPF.format(umCpf);
 // '676.754.677-10'
 ```
 
-#### CPF.strip(String);
+#### CPF.strip();
 Assinatura do método:
 ```c
 String strip(String umCPF);
