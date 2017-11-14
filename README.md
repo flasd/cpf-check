@@ -101,4 +101,4 @@ CPF.strip(myCuteCpf);
 
 ### Copyright and License
 
-Copyright (c) 2017 [Marcel Coelho](https://github.com/flasd) under the [MIT license](https://github.com/flasd/cpf-check/blob/master/LICENSE.md). Go Crazy. :rocket:
+Copyright (c) 2017 [Marcel de Oliveira Coelho](https://github.com/flasd) under the [MIT license](https://github.com/flasd/cpf-check/blob/master/LICENSE.md). Go Crazy. :rocket:
