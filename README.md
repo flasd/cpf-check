@@ -86,7 +86,7 @@ CPF.format(myCpf);
 // '676.754.677-10'
 ```
 
-#### CPF.strip(String): String
+#### CPF.strip();
 Method signature:
 ```c
 String strip(String cuteCPF);
