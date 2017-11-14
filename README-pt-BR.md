@@ -1,68 +1,98 @@
 # cpf-check
-Validador, Gerador e Formatados de CPF, roda tanto no navegador quanto no servidor. Incrívelmente pequeno, apenas 2.2KB (890bytes gziped!!).
-[![Build Status](https://travis-ci.org/flasd/cpf-check.svg?branch=master)](https://travis-ci.org/flasd/cpf-check) [![Coverage Status](https://coveralls.io/repos/github/flasd/cpf-check/badge.svg?branch=master)](https://coveralls.io/github/flasd/cpf-check?branch=master) [![npm version](https://badge.fury.io/js/cpf-check.svg)](https://www.npmjs.com/package/cpf-check)
-### Instalation
-Adicione a ultima versão ao seu `package.json`.
+Validador, gerador e formatdor de CPFs que funciona tanto em navegadores quanto no servidor. Incrívelmente pequeno, apenas 2.2KB (890Bytes GZiped!)
+
+[![Build Status](https://travis-ci.org/flasd/cpf-check.svg?branch=master)](https://travis-ci.org/flasd/cpf-check) 
+[![Coverage Status](https://coveralls.io/repos/github/flasd/cpf-check/badge.svg?branch=master)](https://coveralls.io/github/flasd/cpf-check?branch=master) 
+[![npm version](https://badge.fury.io/js/cpf-check.svg)](https://www.npmjs.com/package/cpf-check) 
+[![npm downloads per month](https://img.shields.io/npm/dm/cpf-check.svg)](https://www.npmjs.com/package/cpf-check)
+
+(README dispoível em inglês [aqui](https://github.com/flasd/cpf-check/blob/master/README.md)).
+## Instalação
+Instale a ultima versão do cpf-check:
 ```
 npm install cpf-check --save
 ```
-Você pode usar o script no navegador:
+Agora você pode usar ele no seu `index.html`
 ```html
 <script type="text/javascript" src="./node_modules/cpf-check/dist/cpf.min.js"></script>
 // window.CPF
 ```
-Ou pode importa-lo como um módulo:
+Ou, pode importa-lo como um módulo:
 ```javascript
 const CPF = require('cpf-check');
 
-// ou, em ES6
+// ou, em ES6+
 
 import CPF from 'cpf-check';
 ```
-Funciona no Node, qualquer ambiente CommonJs e como um módulo AMD.
+O module obedece a especificação [UMD](https://github.com/umdjs/umd), portanto ele é compativel com RequireJs, AMD, CommonJs 1 & 2, etc.
 
-## Uso & API
-### CPF(String): Boolean
-O Objeto exportado por padrão é uma função que valida CPFs:
+
+## API & Usage
+#### CPF() & CPF.validate();
+Assinatura do método:
+```c
+Boolean validate(String CPF);
+```
+O método `CPF()` é um pseudônimo para o método `CPF.validate()`. O exportado por padrão é uma função que valida CPFs.
+
 ```javascript
 const CPF = require('cpf-check')
-const meuCpf = '676.754.677-10';
+const algumCPF = '676.754.677-10';
 
-CPF(meuCpf);
+CPF(algumCPF);
 // true
 
-CPF.validate(meuCpf);
+CPF.validate(algumCPF);
 // true
 ```
-O método `CPF.validate()` é um pseudônimo para o método `CPF()`.
 
-### CPF.generate(): String
-Gera CPFs válidos:
+
+#### CPF.generate();
+Assinatura do método:
+```c
+String generate();
+```
+Este método gera CPFs validos.
+
 ```javascript
 CPF.generate();
 // '676.754.677-10'
 ```
 
-### CPF.parse(String): String
-Parse CPFs em strings de texto:
-```javascript
-const meuTexto = 'Hey, my CPF is 676.754.677-10';
 
-CPF.parse(meuTexto);
+#### CPF.parse();
+Assinatura do método:
+```c
+String parse(String text);
+```
+Analisar uma String em busca de CPFs usando RegEx:
+```javascript
+const umText = 'Hey, my CPF is 676.754.677-10';
+
+CPF.parse(umText);
 // '676.754.677-10'
 ```
 
-### CPF.format(String): String
-Formata CPFs:
+#### CPF.format();
+Assinatura do método:
+```c
+String format(String rawCPF);
+```
+Este método formata Strings de CPFs:
 ```javascript
-const meuCpf = '67675467710';
+const umCpf = '67675467710';
 
-CPF.format(meuCpf);
+CPF.format(umCpf);
 // '676.754.677-10'
 ```
 
-### CPF.strip(String): String
-Limpa CPFs:
+#### CPF.strip(String);
+Assinatura do método:
+```c
+String strip(String umCPF);
+```
+Esté método tira quaisquer simbolos do CPF, deixando apenas os números. Ele faz o oposto do método `format()`.
 ```javascript
 const meuCpf = '676.754.677-10';
 
@@ -70,10 +100,6 @@ CPF.strip(meuCpf);
 // '67675467710'
 ```
 
-## PRs
-Se você encontrar algo errado, não exite em abrir um PR!
-## Bonus!
-Se você está curioso para saber como esse módulo funciona antes de implementa-lo no seu próximo projeto, o código fonte está amplamente comentado! (Em inglês, desculpa ;) Vá para [src/index.js](https://github.com/flasd/cpf-check/blob/master/src/index.js) é confira!
-## Copyright e Licença
+### Copyright e Licença
 
-Copyright (c) 2017 [Marcel Coelho](https://github.com/flasd) sob a [MIT license](https://github.com/flasd/cpf-check/blob/master/LICENSE.md)
+Copyright (c) 2017 [Marcel de Oliveira Coelho](https://github.com/flasd) sob a [licença MIT](https://github.com/flasd/cpf-check/blob/master/LICENSE.md). :rocket:
