@@ -6,7 +6,7 @@
   "scripts": {
     "test": "cross-env NODE_ENV=test nyc mocha src/**/*.spec.js --require=babel-core/register",
     "start": "npm run clear && cross-env NODE_ENV=development gulp",
-    "covarage": "npm test && nyc report -x ./src/index.spec.js --reporter=text-lcov | coveralls",
+    "coverage": "npm test && nyc report -x ./src/index.spec.js --reporter=text-lcov | coveralls",
     "prebuild": "npm run clear && npm test && npm run lint",
     "build": "cross-env NODE_ENV=production gulp",
     "lint": "eslint src/index.js",
