@@ -75,9 +75,9 @@ export function format(raw: String): String {
     if (!isString(raw)) {
         throw new Error(`CPF.format Error\nExpected String but instead got ${typeof raw}`);
     }
-
-    const regex = /^(\d{3})(\d{3})(\d{3})(\d{2})$/;
-    return strip(parse(raw)).replace(regex, '$1.$2.$3-$4');
+    const newRaw = strip(parse(raw)).substr(0, 11);
+    const regex = /^(\d{3})(\d{3})(\d{3})(\d{2})*$/;
+    return newRaw.replace(regex, '$1.$2.$3-$4');
 }
 
 /**
@@ -145,9 +145,8 @@ export function validate(raw: String): Boolean {
 
     // Get the Array<Number> for the CPF's digits
     const digits = transform(strip(parse(raw)));
-
     // If length is not 11, CPF is not valid!
-    if (digits.length !== 11) {
+    if (digits.length !== 11 || strip(raw).length !== 11) {
         return false;
     }
 
