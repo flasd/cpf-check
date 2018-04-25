@@ -57,6 +57,14 @@ describe('CPF module', () => {
             expect(output).to.equal(expected);
         });
 
+        it('should format a CPF string with more than 11 length', () => {
+            const expected = '101.010.101-01';
+            const input = '10101010101090909';
+            const output = CPF.format(input);
+
+            expect(output).to.equal(expected);
+        });
+
         it('shouldnt format non-cpf strings', () => {
             const expected = '';
             const input = 'lorem ipsum';
@@ -130,6 +138,14 @@ describe('CPF module', () => {
         it('should return false for a invalid CPF', () => {
             const expected = false;
             const input = '45260864281';
+            const output = CPF.validate(input);
+
+            expect(output).to.equal(expected);
+        });
+
+        it('should return false for a invalid CPF length', () => {
+            const expected = false;
+            const input = '0123456789000';
             const output = CPF.validate(input);
 
             expect(output).to.equal(expected);
