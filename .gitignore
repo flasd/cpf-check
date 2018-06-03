@@ -35,6 +35,3 @@ jspm_packages/
 
 # Yarn Integrity file
 .yarn-integrity
-
-# Distribution Folder
-dist/
