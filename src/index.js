@@ -2,7 +2,6 @@ import assert from './assert';
 import { CPF_REGEX, INVALID_CODE, LENGTH_CODE, VALID_CODE } from './constants';
 import getVerifier from './get-verifier';
 import isFalsePositive from './is-false-positive';
-import isString from './is-string';
 
 /**
  * @typedef {Object} ValidationResult
@@ -20,7 +19,7 @@ import isString from './is-string';
  */
 export function strip(raw) {
     assert(
-        isString(raw),
+        Object.prototype.toString.call(raw) === '[object String]',
         `Expected String but instead got ${typeof raw}`,
         INVALID_CODE,
     );
@@ -36,7 +35,7 @@ export function strip(raw) {
  */
 export function validate(rawString) {
     assert(
-        isString(rawString),
+        Object.prototype.toString.call(rawString) === '[object String]',
         `Expected CPF to be a string insead got ${typeof rawString}`,
     );
 
