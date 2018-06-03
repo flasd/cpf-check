@@ -141,7 +141,7 @@ export function generate(formatted = true) {
     return formatted ? format(finalString) : finalString;
 }
 
-export default Object.defineProperties({}, {
+export default Object.defineProperties(validate, {
     strip: { value: strip },
     format: { value: format },
     validate: { value: validate },
