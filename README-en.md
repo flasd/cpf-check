@@ -1,5 +1,6 @@
 # cpf-check
 CPF generator, validator and formatter that runs both on the browser and in the server. Super small, only 1.6KB gzipped.
+
 [![Build Status](https://travis-ci.org/flasd/cpf-check.svg?branch=master)](https://travis-ci.org/flasd/cpf-check) 
 [![Coverage Status](https://coveralls.io/repos/github/flasd/cpf-check/badge.svg?branch=master)](https://coveralls.io/github/flasd/cpf-check?branch=master) 
 [![npm version](https://badge.fury.io/js/cpf-check.svg)](https://www.npmjs.com/package/cpf-check) 
@@ -16,7 +17,7 @@ Now you can use it in your index.html
 <script type="text/javascript" src="./node_modules/cpf-check/dist/cpf.min.js"></script>
 // window.CPF
 ```
-Or, import it as a module.
+Or import it as a module.
 ```javascript
 const CPF = require('cpf-check');
 
@@ -52,7 +53,7 @@ validate(someCpf);
 #### CPF.generate();
 Method signature:
 ```c
-String generate(?Boolean formatar);
+String generate(?Boolean format);
 ```
 This method generates valid CPFs:
 

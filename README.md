@@ -1,5 +1,6 @@
 # cpf-check
 Gerador, validador e formatador de CPF que roda tanto no navegador quanto no servidor. Super pequeno, apenas 1.6KB gzipped.
+
 [![Build Status](https://travis-ci.org/flasd/cpf-check.svg?branch=master)](https://travis-ci.org/flasd/cpf-check) 
 [![Coverage Status](https://coveralls.io/repos/github/flasd/cpf-check/badge.svg?branch=master)](https://coveralls.io/github/flasd/cpf-check?branch=master) 
 [![npm version](https://badge.fury.io/js/cpf-check.svg)](https://www.npmjs.com/package/cpf-check) 
@@ -16,7 +17,7 @@ Agora é só usá-lo no seu index.html
 <script type="text/javascript" src="./node_modules/cpf-check/dist/cpf.min.js"></script>
 // window.CPF
 ```
-Ou, importe como um módulo:
+Ou importa-lo como um módulo:
 ```javascript
 const CPF = require('cpf-check');
 
@@ -32,7 +33,7 @@ Assinatura do método:
 ```c
 Boolean validate(String algumCpf);
 ```
-O export padrão é um método que valida CPFs. O método `CPF()` é um pseudônimo do método `CPF.validate()`. O e 
+O export padrão é um método que valida CPFs. O método `CPF()` é um pseudônimo do método `CPF.validate()`.
 ```javascript
 import CPF, { validate } from 'cpf-check';
 
