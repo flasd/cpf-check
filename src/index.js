@@ -141,22 +141,9 @@ export function generate(formatted = true) {
     return formatted ? format(finalString) : finalString;
 }
 
-/**
- * Parse functions from v1, to warm about compatibility error.
- * @public
- */
-export function parse() {
-    assert(
-        false,
-        'Parse function was dropped since v2. Please refer to the docs for more info',
-        INVALID_CODE,
-    );
-}
-
 export default Object.defineProperties(validate, {
     strip: { value: strip },
     format: { value: format },
     validate: { value: validate },
     generate: { value: generate },
-    parse: { value: parse },
 });
