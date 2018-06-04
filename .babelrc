@@ -1,9 +1,34 @@
 {
-    "presets": ["flow", "es2015"],
-    "plugins": ["transform-flow-strip-types"],
     "env": {
+        "development": {
+            "presets": [
+                ["env", {
+                    "targets": {
+                        "node": "current"
+                    }
+                }]
+            ]
+        },
         "test": {
-            "plugins": ["rewire"]
+            "presets": [
+                ["env", {
+                    "targets": {
+                        "node": "current"
+                    }
+                }]
+            ]
+        },
+        "production": {
+            "presets": [
+                ["env", {
+                    "targets": {
+                        "browsers": ["defaults"],
+                        "node": 6
+                    }
+                }]
+            ],
+
+            "plugins": ["faster.js"]
         }
     }
 }
