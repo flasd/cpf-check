@@ -388,7 +388,7 @@ function generate() {
     return formatted ? format(finalString) : finalString;
 }
 
-exports.default = Object.defineProperties({}, {
+exports.default = Object.defineProperties(validate, {
     strip: { value: strip },
     format: { value: format },
     validate: { value: validate },
