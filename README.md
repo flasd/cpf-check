@@ -39,14 +39,19 @@ import CPF, { validate } from 'cpf-check';
 
 const algumCpf = '676.754.677-10';
 
-CPF(algumCpf);
-// true
+const { valid, error, code } = CPF(algumCpf);
+// valid => true
+// error => false
+// code => 'VALID'
 
-CPF.validate(algumCpf);
-// true
+const resultado = CPF.validate(algumCpf);
+// resultado => { valid: true, error: false, code: 'VALID' }
 
-validate(algumCpf);
-// true
+const resultado = validate('não-cpf');
+// resultado => { valid: false, error: true, code: 'LENGTH }
+
+const resultado = validate('12345678910');
+// resultado => { valid: false, error: true, code: 'INVALID' }
 ```
 
 
