@@ -35,6 +35,7 @@ const baseOutput = {
     path: dist,
     library: 'CPF',
     libraryTarget: 'umd',
+    globalObject: 'typeof self !== \'undefined\' ? self : this',
 };
 
 const regularConfig = Object.assign({}, baseConfig, {
