@@ -1,12 +1,12 @@
 # cpf-check
 CPF generator, validator and formatter that runs both on the browser and in the server. Super small, only 1.6KB gzipped.
 
-[![Build Status](https://travis-ci.org/flasd/cpf-check.svg?branch=master)](https://travis-ci.org/flasd/cpf-check) 
-[![Coverage Status](https://coveralls.io/repos/github/flasd/cpf-check/badge.svg?branch=master)](https://coveralls.io/github/flasd/cpf-check?branch=master) 
+[![Build Status](https://travis-ci.org/husscode/cpf-check.svg?branch=master)](https://travis-ci.org/husscode/cpf-check) 
+[![Coverage Status](https://coveralls.io/repos/github/husscode/cpf-check/badge.svg?branch=master)](https://coveralls.io/github/husscode/cpf-check?branch=master) 
 [![npm version](https://badge.fury.io/js/cpf-check.svg)](https://www.npmjs.com/package/cpf-check) 
 [![npm downloads per month](https://img.shields.io/npm/dm/cpf-check.svg)](https://www.npmjs.com/package/cpf-check)
 
-(README disponível em português [README](https://github.com/flasd/cpf-check/blob/master/README.md)).
+(README disponível em português [README](https://github.com/husscode/cpf-check/blob/master/README.md)).
 ## Installation
 Install the latest version of cpf-check:
 ```
@@ -113,4 +113,4 @@ strip(someCpf);
 
 ### Copyright & License
 
-Copyright (c) 2017 [Marcel de Oliveira Coelho](https://github.com/flasd) under the [MIT License](https://github.com/flasd/cpf-check/blob/master/LICENSE.md). Go Crazy. :rocket:
+Copyright (c) 2017 [Marcel de Oliveira Coelho](https://github.com/husscode) under the [MIT License](https://github.com/husscode/cpf-check/blob/master/LICENSE.md). Go Crazy. :rocket:
