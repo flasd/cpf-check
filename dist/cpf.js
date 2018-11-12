@@ -220,7 +220,7 @@ exports.default = assert;
  */
 function assert(condition, message, code) {
     if (!condition) {
-        var errorMessage =  true ? 'cpf-check error. Use dev environment for the full error message.' : undefined;
+        var errorMessage =  false ? undefined : 'cpf-check Error. ' + message;
 
         var error = new Error(errorMessage);
         error.code = code;

@@ -16,26 +16,24 @@ const baseConfig = {
 
     module: {
         strictExportPresence: true,
-        rules: [{
-            enforce: 'pre',
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'babel-loader',
+        rules: [
+            {
+                enforce: 'pre',
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                },
             },
-        }],
+        ],
     },
-
-    plugins: [
-        new webpack.EnvironmentPlugin(),
-    ],
 };
 
 const baseOutput = {
     path: dist,
     library: 'CPF',
     libraryTarget: 'umd',
-    globalObject: 'typeof self !== \'undefined\' ? self : this',
+    globalObject: "typeof self !== 'undefined' ? self : this",
 };
 
 const regularConfig = Object.assign({}, baseConfig, {
@@ -46,6 +44,12 @@ const regularConfig = Object.assign({}, baseConfig, {
     optimization: {
         minimize: false,
     },
+
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': '"development"',
+        }),
+    ],
 });
 
 const minifiedConfig = Object.assign({}, baseConfig, {
@@ -56,6 +60,8 @@ const minifiedConfig = Object.assign({}, baseConfig, {
     optimization: {
         minimize: true,
     },
+
+    plugins: [new webpack.EnvironmentPlugin()],
 });
 
 module.exports = [regularConfig, minifiedConfig];

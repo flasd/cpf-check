@@ -2,7 +2,7 @@
   "name": "cpf-check",
   "version": "2.0.4",
   "description": "Validador de CPF Moderno, Isomórfico e Super Leve.",
-  "main": "dist/cpf.min.js",
+  "main": "dist/cpf.js",
   "scripts": {
     "build": "rimraf dist && cross-env NODE_ENV=production webpack --mode=production",
     "coverage": "cross-env NODE_ENV=test jest --coverage --coverageReporters=text-lcov | coveralls",
