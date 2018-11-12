@@ -34,7 +34,7 @@ describe('CPF module', () => {
             expect(valid).toBe(false);
             expect(error).toBe(true);
             expect(code).toBe(INVALID_CODE);
-        })
+        });
 
         test('When the first verifier is off', () => {
             const { valid, error, code } = validate('38711578150');
@@ -42,7 +42,7 @@ describe('CPF module', () => {
             expect(valid).toBe(false);
             expect(error).toBe(true);
             expect(code).toBe(INVALID_CODE);
-        })
+        });
 
         test('When the second verifier is off', () => {
             const { valid, error, code } = validate('38711578132');
@@ -50,7 +50,7 @@ describe('CPF module', () => {
             expect(valid).toBe(false);
             expect(error).toBe(true);
             expect(code).toBe(INVALID_CODE);
-        })
+        });
 
         test('when input is valid', () => {
             const { valid, error, code } = validate('38711578130');
@@ -69,7 +69,7 @@ describe('CPF module', () => {
                     throw new Error('jest');
                 });
             });
-            
+
             test('when something under cpf-check breaks', () => {
                 expect(() => validate('38711578130')).toThrow(/jest/);
             });

@@ -13,20 +13,24 @@ describe('assert', () => {
                 } catch (error) {
                     return error;
                 }
+
+                return undefined;
             }
 
             expect(getErrorObject()).toHaveProperty('code', 'XXXX');
             expect(getErrorObject()).toHaveProperty('isCpfCheck', true);
-        })
+        });
     });
 
     describe('', () => {
-        beforeAll(() => { process.env.NODE_ENV = 'production' });
+        beforeAll(() => { process.env.NODE_ENV = 'production'; });
 
         test('in production env', () => {
             expect(() => assert(false, 'message', 'code')).toThrow(/environment/);
-        })
+        });
 
-        afterAll(() => process.env.NODE_ENV = 'test')
+        afterAll(() => {
+            process.env.NODE_ENV = 'test';
+        });
     });
 });
