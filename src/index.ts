@@ -53,7 +53,7 @@ export function validate(something: any): boolean {
 export function generate(formatted?: boolean): CPF {
   const prefix = Array(9)
     .fill(0)
-    .map(() => Math.floor(Math.random() * 9);
+    .map(() => Math.floor(Math.random() * 9));
 
   const firstVerifier = digit(prefix);
 
