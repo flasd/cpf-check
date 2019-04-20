@@ -1,5 +1,5 @@
 # cpf-check
-CPF generator, validator and formatter that runs both on the browser and in the server. Super small, only 448 Bytes gzipped.
+CPF generator, validator and formatter that runs both on the browser and in the server. Super small, only 447 Bytes gzipped.
 
 [![Build Status](https://travis-ci.org/husscode/cpf-check.svg?branch=master)](https://travis-ci.org/husscode/cpf-check) 
 [![Coverage Status](https://coveralls.io/repos/github/husscode/cpf-check/badge.svg?branch=master)](https://coveralls.io/github/husscode/cpf-check?branch=master) 

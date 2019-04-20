@@ -1,5 +1,5 @@
 # cpf-check
-Gerador, validador e formatador de CPF que roda tanto no navegador quanto no servidor. Super pequeno, apenas 448 Bytes gzipped.
+Gerador, validador e formatador de CPF que roda tanto no navegador quanto no servidor. Super pequeno, apenas 447 Bytes gzipped.
 
 [![Build Status](https://travis-ci.org/flasd/cpf-check.svg?branch=master)](https://travis-ci.org/husscode/cpf-check) 
 [![Coverage Status](https://coveralls.io/repos/github/flasd/cpf-check/badge.svg?branch=master)](https://coveralls.io/github/husscode/cpf-check?branch=master) 
