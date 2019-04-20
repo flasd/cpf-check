@@ -1,5 +1,5 @@
 # cpf-check
-CPF generator, validator and formatter that runs both on the browser and in the server. Super small, only 1.6KB gzipped.
+CPF generator, validator and formatter that runs both on the browser and in the server. Super small, only 448 Bytes gzipped.
 
 [![Build Status](https://travis-ci.org/husscode/cpf-check.svg?branch=master)](https://travis-ci.org/husscode/cpf-check) 
 [![Coverage Status](https://coveralls.io/repos/github/husscode/cpf-check/badge.svg?branch=master)](https://coveralls.io/github/husscode/cpf-check?branch=master) 
@@ -14,103 +14,103 @@ npm install cpf-check --save
 ```
 Now you can use it in your index.html
 ```html
-<script type="text/javascript" src="./node_modules/cpf-check/dist/cpf.min.js"></script>
-// window.CPF
+<script type="text/javascript" src="./node_modules/cpf-check/dist/index.umd.js"></script>
+// window.cpfCheck
 ```
 Or import it as a module.
 ```javascript
-const CPF = require('cpf-check');
+const cpfCheck = require('cpf-check');
 
 // or, in ES6+
 
-import CPF from 'cpf-check';
+import cpfCheck from 'cpf-check';
 ```
 This module is [UMD](https://github.com/umdjs/umd) compliant, therefore it's compatible with  RequireJs, AMD, CommonJs 1 & 2, etc.
 
 ## API & Usage.
-#### CPF() & CPF.validate();
+#### cpfCheck.validate();
 Method signature:
-```c
-Boolean validate(String someCpf);
+```typescript
+validate(someCpf: any): boolean;
 ```
-The default export is an method that validates CPFs. It is an alias for the `CPF.validate()`.
 ```javascript
-import CPF, { validate } from 'cpf-check';
+import cpfCheck, { validate } from 'cpf-check';
 
 const someCpf = '676.754.677-10';
 
-const { valid, error, code } = CPF(algumCpf);
-// valid => true
-// error => false
-// code => 'VALID'
+cpfCheck.validate(someCpf);
+// « true
 
-const result = CPF.validate(algumCpf);
-// result => { valid: true, error: false, code: 'VALID' }
+validate(someCpf);
+// « true
 
-const result = validate('not-a-cpf');
-// result => { valid: false, error: true, code: 'LENGTH }
+validate('not-a-cpf');
+// « false
 
-const result = validate('12345678910');
-// result => { valid: false, error: true, code: 'INVALID' }
+validate('12345678910');
+// « false
 ```
 
 
-#### CPF.generate();
+#### cpfCheck.generate();
 Method signature:
-```c
-String generate(?Boolean format);
+```typescript
+generate(format?: boolean): string;
 ```
 This method generates valid CPFs:
 
 ```javascript
-import CPF, { generate } from 'cpf-check';
+import cpfCheck, { generate } from 'cpf-check';
 
-CPF.generate();
-// '676.754.677-10'
+cpfCheck.generate();
+// « '67675467710'
+
+generate(true);
+// « '676.754.677-10'
 
 generate();
-// '676.754.677-10'
-
-generate(false);
-// '67675467710'
+// « '67675467710'
 ```
 
-#### CPF.format();
+#### cpfCheck.format();
 Method signature:
-```c
-String format(String someCpf);
+```typescript
+format(someCpf: any): string;
 ```
-This method beautifies CPFs strings.
+This method add punctuation to CPFs strings.
 ```javascript
-import CPF, { format } from 'cpf-check';
+import cpfCheck, { format } from 'cpf-check';
 
 const someCpf = '67675467710';
 
-CPF.format(someCpf);
-// '676.754.677-10'
+cpfCheck.format(someCpf);
+// « '676.754.677-10'
 
 format(someCpf);
-// '676.754.677-10'
+// « '676.754.677-10'
+
+format('not-a-cpf');
+// « ''
 ```
 
-#### CPF.strip();
+#### cpfCheck.strip();
 Method signature:
-```c
-String strip(String someCpf);
+```typescript
+strip(someCpf: any): string;
 ```
-This method removes non-numeric characters from a string. It does the opposite of `format()`;
+This method removes non-numeric characters from a string.
 ```javascript
-import CPF, { strip } from 'cpf-check';
+import cpfCheck, { strip } from 'cpf-check';
 
 const someCpf = '676.754.677-10';
 
-CPF.strip(someCpf);
-// '67675467710'
+cpfCheck.strip(someCpf);
+// « '67675467710'
 
 strip(someCpf);
-// '67675467710'
+// « '67675467710'
 ```
 
 ### Copyright & License
 
-Copyright (c) 2017 [Marcel de Oliveira Coelho](https://github.com/husscode) under the [MIT License](https://github.com/husscode/cpf-check/blob/master/LICENSE.md). Go Crazy. :rocket:
+Copyright (c) 2019 [Marcel de Oliveira Coelho](https://github.com/husscode) under the [MIT License](https://github.com/husscode/cpf-check/blob/master/LICENSE.md). Go Crazy. :rocket:
