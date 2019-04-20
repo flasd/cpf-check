@@ -5,7 +5,7 @@ const CPF_REGEX = /^(\d{3})(.|-)?(\d{3})(.|-)?(\d{3})(.|-)?(\d{2})$/;
 
 function digit(partial: Partial): number {
   const remainder =
-    [...partial]
+    partial
       .map((value, index) => (partial.length + 1 - index) * value)
       .reduce((accumulator, value) => accumulator + value, 0) % 11;
 
