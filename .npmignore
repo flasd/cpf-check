@@ -54,3 +54,13 @@ README-en.md
 
 # Webpack Config
 webpack.config.js
+
+# rts2 cache
+.rts2*
+
+# ts config files
+tsconfig.json
+tslint.json
+
+# jest config file
+jest.config.js
