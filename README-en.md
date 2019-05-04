@@ -15,30 +15,30 @@ npm install cpf-check --save
 Now you can use it in your index.html
 ```html
 <script type="text/javascript" src="./node_modules/cpf-check/dist/index.umd.js"></script>
-// window.cpfCheck
+// window.CPF
 ```
 Or import it as a module.
 ```javascript
-const cpfCheck = require('cpf-check');
+const CPF = require('cpf-check');
 
 // or, in ES6+
 
-import cpfCheck from 'cpf-check';
+import CPF from 'cpf-check';
 ```
 This module is [UMD](https://github.com/umdjs/umd) compliant, therefore it's compatible with  RequireJs, AMD, CommonJs 1 & 2, etc.
 
 ## API & Usage.
-#### cpfCheck.validate();
+#### CPF.validate();
 Method signature:
 ```typescript
 validate(someCpf: any): boolean;
 ```
 ```javascript
-import cpfCheck, { validate } from 'cpf-check';
+import CPF, { validate } from 'cpf-check';
 
 const someCpf = '676.754.677-10';
 
-cpfCheck.validate(someCpf);
+CPF.validate(someCpf);
 // « true
 
 validate(someCpf);
@@ -52,7 +52,7 @@ validate('12345678910');
 ```
 
 
-#### cpfCheck.generate();
+#### CPF.generate();
 Method signature:
 ```typescript
 generate(format?: boolean): string;
@@ -60,9 +60,9 @@ generate(format?: boolean): string;
 This method generates valid CPFs:
 
 ```javascript
-import cpfCheck, { generate } from 'cpf-check';
+import CPF, { generate } from 'cpf-check';
 
-cpfCheck.generate();
+CPF.generate();
 // « '67675467710'
 
 generate(true);
@@ -72,18 +72,18 @@ generate();
 // « '67675467710'
 ```
 
-#### cpfCheck.format();
+#### CPF.format();
 Method signature:
 ```typescript
 format(someCpf: any): string;
 ```
 This method add punctuation to CPFs strings.
 ```javascript
-import cpfCheck, { format } from 'cpf-check';
+import CPF, { format } from 'cpf-check';
 
 const someCpf = '67675467710';
 
-cpfCheck.format(someCpf);
+CPF.format(someCpf);
 // « '676.754.677-10'
 
 format(someCpf);
@@ -93,14 +93,14 @@ format('not-a-cpf');
 // « ''
 ```
 
-#### cpfCheck.strip();
+#### CPF.strip();
 Method signature:
 ```typescript
 strip(someCpf: any): string;
 ```
 This method removes non-numeric characters from a string.
 ```javascript
-import cpfCheck, { strip } from 'cpf-check';
+import CPF, { strip } from 'cpf-check';
 
 const someCpf = '676.754.677-10';
 

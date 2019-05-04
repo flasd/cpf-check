@@ -15,30 +15,30 @@ npm install cpf-check --save
 Agora é só usá-lo no seu index.html
 ```html
 <script type="text/javascript" src="./node_modules/cpf-check/dist/index.umd.js"></script>
-// window.cpfCheck
+// window.CPF
 ```
 Ou importa-lo como um módulo:
 ```javascript
-const cpfCheck = require('cpf-check');
+const CPF = require('cpf-check');
 
 // ou, em ES6+
 
-import cpfCheck from 'cpf-check';
+import CPF from 'cpf-check';
 ```
 Esse módulo é compativel com o padrão [UMD](https://github.com/umdjs/umd), portanto é compatível com o RequireJs, AMD, CommonJs 1 e 2, etc.
 
 ## API & Uso.
-#### cpfCheck.validate();
+#### CPF.validate();
 Assinatura do método:
 ```typescript
 validate(algumCpf: any): boolean;
 ```
 ```javascript
-import cpfCheck, { validate } from 'cpf-check';
+import CPF, { validate } from 'cpf-check';
 
 const algumCpf = '676.754.677-10';
 
-cpfCheck.validate(algumCpf);
+CPF.validate(algumCpf);
 // « true
 
 validate(algumCpf);
@@ -52,7 +52,7 @@ validate('12345678910');
 ```
 
 
-#### cpfCheck.generate();
+#### CPF.generate();
 Assinatura do método:
 ```typescript
 generate(formatar?: boolean): string;
@@ -60,9 +60,9 @@ generate(formatar?: boolean): string;
 Esse método gera CPFs válidos.
 
 ```javascript
-import cpfCheck, { generate } from 'cpf-check';
+import CPF, { generate } from 'cpf-check';
 
-cpfCheck.generate();
+CPF.generate();
 // « '67675467710'
 
 generate(true);
@@ -72,18 +72,18 @@ generate();
 // « '67675467710'
 ```
 
-#### cpfCheck.format();
+#### CPF.format();
 Assinatura do método:
 ```typescript
 format(algumCpf: any): string;
 ```
 Esse método adiciona pontuação a strings de CPFs.
 ```javascript
-import cpfCheck, { format } from 'cpf-check';
+import CPF, { format } from 'cpf-check';
 
 const meuCpf = '67675467710';
 
-cpfCheck.format(meuCpf);
+CPF.format(meuCpf);
 // « '676.754.677-10'
 
 format(meuCpf);
@@ -93,18 +93,18 @@ format('não-cpf');
 // « ''
 ```
 
-#### cpfCheck.strip();
+#### CPF.strip();
 Assinatura do método:
 ```typescript
 strip(algumCpf: any): string;
 ```
 Esse método retira caracteres não numéricos de uma string.
 ```javascript
-import cpfCheck, { strip } from 'cpf-check';
+import CPF, { strip } from 'cpf-check';
 
 const algumCpf = '676.754.677-10';
 
-cpfCheck.strip(algumCpf);
+CPF.strip(algumCpf);
 // « '67675467710'
 
 strip(algumCpf);
