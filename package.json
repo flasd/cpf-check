@@ -2,11 +2,15 @@
   "name": "cpf-check",
   "version": "2.0.5",
   "description": "Validador de CPF Moderno, Isomórfico e Super Leve.",
-  "main": "dist/cpf.js",
+  "main": "dist/index.umd.js",
+  "umd:main": "dist/index.umd.js",
+  "source": "src/index.ts",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "rimraf dist && cross-env NODE_ENV=production webpack --mode=production",
+    "build": "rimraf dist && cross-env NODE_ENV=production microbundle --no-sourcemap --name CPF && rimraf dist/index.test.d.ts",
     "coverage": "cross-env NODE_ENV=test jest --coverage --coverageReporters=text-lcov | coveralls",
-    "lint": "eslint src/** ",
+    "lint": "tslint src/** ",
     "prebuild": "npm run test && npm run lint",
     "prepublishOnly": "npm run build",
     "test": "cross-env NODE_ENV=test jest"
@@ -27,32 +31,15 @@
   },
   "homepage": "https://github.com/flasd/cpf-check#readme",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.3",
-    "babel-jest": "^23.0.1",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.7.0",
-    "coveralls": "^3.0.1",
-    "cross-env": "^5.1.6",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.12.0",
-    "faster.js": "^1.1.0",
-    "jest": "^23.1.0",
-    "rimraf": "^2.6.2",
-    "webpack": "^4.10.2",
-    "webpack-command": "^0.2.0"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.js"
-    ],
-    "testMatch": [
-      "<rootDir>/src/**/?(*.)test.js"
-    ],
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.js$"
-    ],
-    "testEnvironment": "node"
+    "@types/jest": "^24.0.11",
+    "coveralls": "^3.0.3",
+    "cross-env": "^5.2.0",
+    "jest": "^24.7.1",
+    "microbundle": "^0.11.0",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.16.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.4.4"
   }
 }
